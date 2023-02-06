@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 //import Axios from 'axios'
 import { getAllPhotos } from './api';
-
-const Photos =()=>{
+import ChildComponent from './ChildComponent'
+const Photos =({name})=>{
     const [photoList, setPhotoList]=useState([]);
     const [isLoading, setIsLoading]= useState(true);
   
@@ -29,6 +29,7 @@ return(
                 <img src={photo.url} alt={photo.title}/>
             </div>
         })}
+        <ChildComponent name={name}/>
     </div>
 )
 

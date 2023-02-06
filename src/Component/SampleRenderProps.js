@@ -6,6 +6,7 @@ import {useCookies} from 'react-cookie'
 const SampleRenderProps=()=>{
     
         const[cookies,setCookie,removeCookie]=useCookies(["name"])
+       const a=5;
         console.log(cookies)
         
         
@@ -14,7 +15,11 @@ const SampleRenderProps=()=>{
             render={()=>{
                 return(
                     <div>
-                        <h2 onClick={(e)=>setCookie("age",20)}>This is from render props</h2>
+                      <h2
+                        onClick={(e)=>{
+                            cookies.getAll()
+                        }}>
+                      </h2>
                         </div>
                 )
             }}
